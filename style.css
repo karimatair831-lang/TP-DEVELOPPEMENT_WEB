@@ -1,0 +1,194 @@
+css
+/* 1. Mise en forme générale de la page */
+body {
+    font-family: "Amasis", serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 30px;
+}
+
+/* 2. Mise en forme du titre */
+h1 {
+    text-align: center;
+    color: #1f4e79;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* 3. Mise en forme du formulaire */
+form {
+    max-width: 1200px;
+    margin: auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #cccccc;
+    box-sizing: border-box;
+}
+
+/* 4. Organisation des trois groupes */
+.groupes {
+    display: flex;
+    gap: 20px;
+}
+
+/* 5. Mise en forme des groupes */
+fieldset {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 5px;
+}
+
+/* 6. Titres des groupes */
+legend {
+    color: #1f4e79;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* 7. Mise en forme des labels */
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* 8. Mise en forme des champs de saisie */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* 9. Effet lorsqu'un champ reçoit le focus */
+input:focus,
+select:focus,
+textarea:focus {
+    border: 2px solid #1f4e79;
+    outline: none;
+    background-color: #f8fbff;
+}
+
+/* 10. Couleur du texte des placeholders */
+::placeholder {
+    color: #999999;
+}
+
+/* 11. Mise en forme des sous-titres */
+.sous-titre {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* 12. Organisation des boutons radio */
+.choix {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* 13. Organisation verticale des cases à cocher */
+.choix-colonne {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* 14. Alignement des boutons radio et des cases */
+.choix div,
+.choix-colonne div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 15. Taille des boutons radio et des cases */
+.choix input,
+.choix-colonne input {
+    width: auto;
+    margin: 0;
+}
+
+/* 16. Labels des choix */
+.choix label,
+.choix-colonne label {
+    display: inline;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* 17. Zone de motivation */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* 18. Mise en forme de la zone des boutons */
+.boutons {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* 19. Style commun des boutons */
+.boutons button {
+    border: none;
+    border-radius: 6px;
+    padding: 12px 25px;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* 20. Bouton Envoyer */
+.boutons button[type="submit"] {
+    background-color: #13d830;
+}
+
+/* 21. Bouton Réinitialiser */
+.boutons button[type="reset"] {
+    background-color: #f30707;
+}
+
+/* 22. Effet au survol du bouton Envoyer */
+.boutons button[type="submit"]:hover {
+    background-color: #0b8f20;
+}
+
+/* 23. Effet au survol du bouton Réinitialiser */
+.boutons button[type="reset"]:hover {
+    background-color: #b00000;
+}
+
+/* 24. Adaptation aux petits écrans */
+@media (max-width: 850px) {
+    .groupes {
+        flex-direction: column;
+    }
+
+    body {
+        padding: 15px;
+    }
+
+    form {
+        padding: 15px;
+    }
+}
