@@ -1,198 +1,129 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <title>Inscription formation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices JavaScript</title>
 
-    <!-- Liaison avec le fichier CSS -->
-    <link rel="stylesheet" href="style.css">
+     <script src="script.js" defer ></script>
+
 </head>
-
 <body>
+    <h1>Exercice 1</h1>
+    <button onclick="demarrer()" >Commencer </button>
 
-    <h1>Formulaire d'inscription à une formation</h1>
+     <h2>Outils de calcul de Exercice 2</h2>
+     <label for="nombre" >Donner un entier :</label>
+     <input type="number" name="nombre" id="nombre">
 
-    <form method="post" enctype="multipart/form-data">
+     <button onclick="calculerSomme()">Calculer la Somme : </button>
+     <button onclick="afficherPairs()">Afficher les nombres pairs :</button>
 
-        <!-- Conteneur des trois groupes -->
-        <div class="groupes">
-
-            <!-- Partie A : Informations personnelles -->
-            <fieldset>
-                <legend>A - Informations personnelles</legend>
-
-                <label for="nom">Nom * :</label>
-                <input type="text" id="nom" name="nom"
-                       placeholder="Ex: Benali" required>
-
-                <label for="prenom">Prénom * :</label>
-                <input type="text" id="prenom" name="prenom"
-                       placeholder="Ex: Ahmed" required>
-
-                <label for="email">Adresse e-mail * :</label>
-                <input type="email" id="email" name="email"
-                       placeholder="exemple@email.com" required>
-
-                <label for="mdp">Mot de passe * :</label>
-                <input type="password" id="mdp" name="mdp" required>
-
-                <label for="naissance">Date de naissance :</label>
-                <input type="date" id="naissance" name="naissance">
-
-                <label for="tel">Téléphone :</label>
-                <input type="tel" id="tel" name="tel"
-                       placeholder="0600000000">
-
-                <label for="age">Âge :</label>
-                <input type="number" id="age" name="age"
-                       min="18" max="60" placeholder="18-60">
-
-                <!-- Choix du sexe -->
-                <p class="sous-titre">Sexe :</p>
-
-                <div class="choix">
-
-                    <div>
-                        <input type="radio" id="homme"
-                               name="sexe" value="Homme">
-                        <label for="homme">Homme</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="femme"
-                               name="sexe" value="Femme">
-                        <label for="femme">Femme</label>
-                    </div>
-
-                </div>
-
-            </fieldset>
+     <p id="resultats"></p>
 
 
-            <!-- Partie B : Formation -->
-            <fieldset>
-                <legend>B - Formation</legend>
 
-                <label for="niveau">Niveau d'étude :</label>
+      <h2>Exercice 3 : Manipulation du DOM</h2>
 
-                <select id="niveau" name="niveau">
-                    <option value="">-- Choisissez votre niveau --</option>
-                    <option value="1re">1re année</option>
-                    <option value="2e">2e année</option>
-                    <option value="3e">3e année</option>
-                </select>
+    <section id="cours">
 
-                <label for="filiere">Filière * :</label>
+        <h2 id="titreCours">Découvrir JavaScript</h2>
 
-                <select id="filiere" name="filiere" required>
-                    <option value="">-- Choisissez une filière --</option>
-                    <option value="gi">Génie informatique</option>
-                    <option value="rt">Réseaux et télécommunication</option>
-                    <option value="ia">IA</option>
-                    <option value="cs">Cyber Security</option>
-                    <option value="bd">Big Data</option>
-                </select>
+        <p class="chapitre">Les variables</p>
 
-            </fieldset>
+        <p class="chapitre important">Les fonctions</p>
+
+        <p class="chapitre">Les événements</p>
+
+        <button type="button" id="modifier">
+            Modifier la présentation
+        </button>
+
+    </section>
 
 
-            <!-- Partie C : Compétences -->
-            <fieldset>
-                <legend>C - Compétences</legend>
+        <!--EXERCICE 4-->
+         <h2>Exercice 4 : Zone interactive</h2>
 
-                <!-- Technologies maîtrisées -->
-                <p class="sous-titre">Technologies maîtrisées :</p>
+    <section>
 
-                <div class="choix-colonne">
+        <label for="prenom">Prénom :</label>
 
-                    <div>
-                        <input type="checkbox" id="html"
-                               name="tech" value="HTML">
-                        <label for="html">HTML</label>
-                    </div>
+        <input type="text" id="prenom"
+            onfocus="mettreEnEvidence(this)"
+            onblur="retablirStyle(this)"
+            oninput="afficherSaisie(this)">
 
-                    <div>
-                        <input type="checkbox" id="css"
-                               name="tech" value="CSS">
-                        <label for="css">CSS</label>
-                    </div>
+        <p id="apercu"></p>
 
-                    <div>
-                        <input type="checkbox" id="js"
-                               name="tech" value="JS">
-                        <label for="js">JavaScript</label>
-                    </div>
+        <button type="button" id="selectionner">
+            Sélectionner le texte
+        </button>
 
-                    <div>
-                        <input type="checkbox" id="python"
-                               name="tech" value="Python">
-                        <label for="python">Python</label>
-                    </div>
+        <p id="survol"
+            onmouseover="changerCouleur(this)"
+            onmouseout="retablirCouleur(this)">
+            Survolez ce texte.
+        </p>
 
-                </div>
+    </section>
 
 
-                <!-- Domaines d'intérêt -->
-                <p class="sous-titre">Domaines d'intérêt :</p>
+     <!-- ===================== -->
+    <!-- EXERCICE 5 -->
+    <!-- ===================== -->
 
-                <div class="choix-colonne">
+    <h2>Exercice 5 : Formulaire d'inscription</h2>
 
-                    <div>
-                        <input type="checkbox" id="web"
-                               name="interet" value="Web">
-                        <label for="web">Développement Web</label>
-                    </div>
+    <form id="formInscription" name="inscription">
 
-                    <div>
-                        <input type="checkbox" id="reseaux"
-                               name="interet" value="Reseaux">
-                        <label for="reseaux">Réseaux</label>
-                    </div>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom">
 
-                    <div>
-                        <input type="checkbox" id="cyber"
-                               name="interet" value="Cyber">
-                        <label for="cyber">Cyber Security</label>
-                    </div>
+        <br><br>
 
-                    <div>
-                        <input type="checkbox" id="ai"
-                               name="interet" value="AI">
-                        <label for="ai">Intelligence artificielle</label>
-                    </div>
+        <label for="profession">Profession :</label>
 
-                </div>
+        <select id="profession" name="profession">
+            <option value="">Choisir une profession</option>
+            <option value="Technicien">Technicien</option>
+            <option value="Ingénieur">Ingénieur</option>
+            <option value="Médecin">Médecin</option>
+        </select>
 
-                <!-- Zone de motivation -->
-                <label for="motivation">Motivation :</label>
+        <br><br>
 
-                <textarea id="motivation" name="motivation"
-                          rows="5" cols="40"
-                          placeholder="Expliquez votre motivation..."></textarea>
+        <label>Sexe :</label>
 
-                <!-- Téléchargement du CV -->
-                <label for="cv">Télécharger CV :</label>
-                <input type="file" id="cv" name="cv">
+        <input type="radio" name="sexe" value="H"> H
 
-            </fieldset>
+        <input type="radio" name="sexe" value="F"> F
 
-        </div>
+        <br><br>
 
-        <!-- Boutons du formulaire -->
-        <div class="boutons">
+        <label>Langues :</label>
 
-            <!-- Bouton vert -->
-            <button type="submit">S'inscrire</button>
+        <input type="checkbox" name="langue" value="Arabe">
+        Arabe
 
-            <!-- Bouton rouge -->
-            <button type="reset">Réinitialiser</button>
+        <input type="checkbox" name="langue" value="Français">
+        Français
 
-        </div>
+        <br><br>
+
+        <button type="submit">Inscrire</button>
+
+        <button type="reset">Effacer</button>
 
     </form>
 
+    <p id="message"></p>
+
+    <h3>Récapitulatif :</h3>
+
+    <pre id="recap"></pre>
+
+
 </body>
 </html>
-```
+
